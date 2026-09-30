@@ -19,6 +19,8 @@ npm run dev
 
 - [产品设计](docs/product-design.md)：阅读任务、核心概念与功能边界。
 - [内容规则](docs/content-rules.md)：来源、依据、重复发布、版本、筛选与简报快照。
+- [当前 Sift 设计的架构方案](docs/architecture-sift.md)：固定简报、可追溯内容与上下文问答的实现建议。
+- [产品需求方案的架构方案](docs/architecture-product.md)：动态精选、外部同步、个性化、异动与通知的实现建议。
 - [演示说明](docs/demo.md)：已实现能力、限制、本地数据与开发方式。
 - [示例情景与资料来源](docs/demo-scenarios.md)：真实背景、虚构材料及完整体验路径。
 - [与产品需求方案的对比](docs/comparison-pm.md)：主要取舍、代价及重新考虑的条件。

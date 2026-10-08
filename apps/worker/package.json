@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^11.2.3",
-    "@nestjs/core": "^11.2.3",
+    "@nestjs/core": "^12.1.2",
     "@news-draft/backend": "workspace:*",
     "@news-draft/db": "workspace:*",
     "bullmq": "^6.3.11",

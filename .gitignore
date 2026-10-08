@@ -1,5 +1,11 @@
 node_modules/
 dist/
+.next/
+.turbo/
+coverage/
 *.tsbuildinfo
+.env*
+!.env.example
 .DS_Store
-.sites-runtime/
+playwright-report/
+test-results/

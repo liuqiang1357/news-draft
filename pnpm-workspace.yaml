@@ -1,0 +1,16 @@
+packages:
+  - apps/*
+  - packages/*
+injectWorkspacePackages: true
+syncInjectedDepsAfterScripts:
+  - build
+allowBuilds:
+  esbuild: true
+  sharp: true
+  msgpackr-extract: false
+minimumReleaseAgeExclude:
+  - "@ai-sdk/gateway@4.0.108"
+  - "@ai-sdk/openai-compatible@3.0.66"
+  - "@ai-sdk/provider-utils@5.0.57"
+  - "@ai-sdk/provider@4.0.25"
+  - ai@7.0.133

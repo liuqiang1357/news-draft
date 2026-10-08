@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@source "../../../../packages/frontend/src/ui";
+
+@theme {
+  --color-ink: #1c2434;
+  --color-muted: #687180;
+  --color-brand: #2454d7;
+  --color-brand-soft: #bdcaef;
+  --color-line: #dfe3ea;
+  --color-paper: #f8faff;
+  --font-editorial: Georgia, serif;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  body {
+    @apply bg-white font-sans text-ink;
+  }
+  a,
+  button {
+    @apply focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-brand;
+    -webkit-tap-highlight-color: transparent;
+  }
+}

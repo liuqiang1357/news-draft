@@ -1,0 +1,11 @@
+.git
+.husky
+**/node_modules
+**/dist
+**/.next
+**/.turbo
+**/.env*
+!**/.env.example
+**/coverage
+**/playwright-report
+**/test-results

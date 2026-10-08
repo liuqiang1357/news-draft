@@ -1,29 +1,44 @@
 {
-  "name": "sift-demo",
+  "name": "news-draft",
   "private": true,
-  "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview --host 127.0.0.1",
-    "format": "prettier --write src index.html package.json tsconfig.json vite.config.ts",
-    "test": "node --experimental-strip-types --test tests/*.test.mjs"
-  },
-  "dependencies": {
-    "lucide-react": "1.46.0",
-    "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "prepare": "husky",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm deps:check && pnpm test",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "lint": "oxlint .",
+    "typecheck": "turbo run typecheck && tsc --noEmit",
+    "deps:check": "knip",
+    "test": "turbo run build --filter=@news-draft/backend --filter=@news-draft/frontend && vitest run --project unit",
+    "test:integration": "turbo run build --filter=@news-draft/api --filter=@news-draft/worker && vitest run --project integration",
+    "test:e2e": "turbo run build --filter=@news-draft/frontend && playwright test",
+    "env:init": "tsx scripts/env-init.ts",
+    "db:generate": "pnpm --filter @news-draft/db db:generate",
+    "db:apply": "pnpm --filter @news-draft/db db:apply",
+    "db:studio": "pnpm --filter @news-draft/db db:studio"
   },
   "devDependencies": {
-    "@types/react": "19.3.0",
-    "@types/react-dom": "19.3.0",
-    "@vitejs/plugin-react": "6.1.1",
-    "prettier": "3.9.6",
-    "typescript": "7.0.2",
-    "vite": "8.3.0"
+    "@news-draft/backend": "workspace:*",
+    "@news-draft/contracts": "workspace:*",
+    "@news-draft/db": "workspace:*",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^24.13.3",
+    "bullmq": "^6.3.11",
+    "husky": "^9.1.7",
+    "ioredis": "^5.11.1",
+    "knip": "^6.40.0",
+    "oxfmt": "^0.66.0",
+    "oxlint": "^1.81.0",
+    "tsx": "^4.23.15",
+    "turbo": "^2.10.12",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
   },
   "engines": {
-    "node": ">=22.12.0"
-  }
+    "node": "^24.7.0 || >=26.0.0"
+  },
+  "packageManager": "pnpm@12.10.1"
 }

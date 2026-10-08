@@ -1,0 +1,47 @@
+{
+  "name": "@news-draft/frontend",
+  "private": true,
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    "./api/queries": {
+      "types": "./dist/api/queries.d.ts",
+      "default": "./dist/api/queries.js"
+    },
+    "./query/provider": {
+      "types": "./dist/query/provider.d.ts",
+      "default": "./dist/query/provider.js"
+    },
+    "./server/proxy": {
+      "types": "./dist/server/proxy.d.ts",
+      "default": "./dist/server/proxy.js"
+    },
+    "./ui/button": {
+      "types": "./dist/ui/button.d.ts",
+      "default": "./dist/ui/button.js"
+    },
+    "./ui/empty-state": {
+      "types": "./dist/ui/empty-state.d.ts",
+      "default": "./dist/ui/empty-state.js"
+    }
+  },
+  "scripts": {
+    "dev": "tsc -w -p tsconfig.build.json --preserveWatchOutput",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@news-draft/contracts": "workspace:*",
+    "@radix-ui/react-slot": "^1.4.0",
+    "@tanstack/react-query": "^5.102.8",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "react": "^19.2.8",
+    "tailwind-merge": "^3.7.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18"
+  }
+}
